@@ -5,8 +5,13 @@ const add = (param1, param2) => {
         return (param1 + param2);
     }
 
-
-   console.log(`The parameter#s do not meet the condition -1000 <= param# <= 1000`); 
+    throw new TypeError("The parameters do not satisfy the operation")
 }
 
-console.log(add(100, 21));
+try {
+    console.log(`Sum : ${add(100, 21)}`);
+    console.log(`Sum : ${add(-1000, 1000)}`);
+    console.log(`Sum : ${add(1000, -11000)}`);
+} catch (e) {
+    console.error(`${e}`)
+}
